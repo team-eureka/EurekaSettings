@@ -84,6 +84,7 @@ int main(int argc, char *argv[] ) {
         printf( "###########################################################\n" );
         printf( "Usage: %s get [section] [var]\n", argv[0] );
         printf( "       %s set [section] [var] [value]\n\n", argv[0] );
+        return 0;
     }
 
 
