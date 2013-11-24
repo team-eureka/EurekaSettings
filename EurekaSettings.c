@@ -74,7 +74,7 @@ int main(int argc, char *argv[] ) {
     {
         /* Print application details */
         printf( "\n###########################################################\n" );
-        printf( "# EurekaSettings v0.1                                     #\n" );
+        printf( "# EurekaSettings v1.0                                     #\n" );
         printf( "# Team Eureka [www.Team-Eureka.com]                       #\n" );
         printf( "###########################################################\n" );
         printf( "# Licensed under GPLv3                                    #\n" );
