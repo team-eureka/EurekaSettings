@@ -13,13 +13,11 @@
 char * systemConfigValue = "/system/chrome/eureka.ini";
 char * userConfigValue = "/data/chrome/eureka.ini";
 
-
-
 //Return configuration path (default to system if user unavailable)
 char * configReadPath(void) {
   if(access(userConfigValue, R_OK) != -1 ) {
       return userConfigValue;
-  }  else {
+  } else {
       return systemConfigValue;
   }
 }
@@ -62,7 +60,6 @@ int compStr (const char *s1, char *s2, size_t sz) {
 
         // Detect difference otherwise.
         if (*s1 != *s2) return 0;
-
         s1++; s2++; sz--;
     }
     return 1;
@@ -95,7 +92,6 @@ int main(int argc, char *argv[] ) {
     if( argc == 4 ){
         n = read_config_var(argv[2], argv[3], str);
         printf("%s", str);
-        
     } else {
         printf( "Incorrect Syntax\n Usage: %s get [section] [var]\n", argv[0]);
     } 
@@ -108,8 +104,7 @@ int main(int argc, char *argv[] ) {
     } else {
         printf( "Incorrect Syntax\n Usage: %s set [section] [var] [value]\n", argv[0]);
     } 
-  }
-  else {
+  } else {
   //catch for any unavailable options
     printf( "Incorrect option \"%s\"\n Usage: %s get [section] [var]\n Usage: %s set [section] [var] [value] \n", argv[1], argv[0], argv[0]);
   }
