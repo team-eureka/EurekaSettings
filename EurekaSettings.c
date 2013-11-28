@@ -6,12 +6,15 @@
 #include "string.h"
 #include "minIni.h"
 #include "unistd.h"
+//required for chmod
+#include "sys/types.h"
+#include "sys/stat.h"
 
 #define sizearray(a)  (sizeof(a) / sizeof((a)[0]))
 
 //define System and Configuration config path
-char * systemConfigValue = "/system/chrome/eureka.ini";
-char * userConfigValue = "/data/chrome/eureka.ini";
+char * systemConfigValue = "/system/usr/share/eureka.ini";
+char * userConfigValue = "/data/share/eureka.ini";
 
 //Return configuration path (default to system if user unavailable)
 char * configReadPath(void) {
@@ -44,6 +47,7 @@ long read_config_var(const char *r_Section, const char *r_Key, char *r_Buffer){
 long write_config_var(const char *w_Section, const char *w_Key, const char *w_Value){
   char *configStr = configWritePath(); 
   ini_puts(w_Section, w_Key, w_Value, configStr);
+  chmod(configStr, S_IRUSR | S_IWUSR |S_IXUSR | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH);
 }
 
 
