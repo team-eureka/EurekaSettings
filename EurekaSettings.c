@@ -13,8 +13,8 @@
 #define sizearray(a)  (sizeof(a) / sizeof((a)[0]))
 
 //define System and Configuration config path
-char * systemConfigValue = "/system/usr/share/eureka.ini";
-char * userConfigValue = "/data/share/eureka.ini";
+char * systemConfigValue = "/system/usr/share/eureka-apps/configs/eureka.ini";
+char * userConfigValue = "/data/eureka/eureka.ini";
 
 //Return configuration path (default to system if user unavailable)
 char * configReadPath(void) {
