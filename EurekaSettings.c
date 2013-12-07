@@ -35,11 +35,11 @@ long read_config_var(const char *r_Section, const char *r_Key, char *r_Buffer){
   char *configStr = configReadPath();
 
   //get variable from userConfig
-  ini_gets(r_Section, r_Key, "undefined", r_Buffer, 100, userConfigValue);
+  ini_gets(r_Section, r_Key, "undefined", r_Buffer, 300, userConfigValue);
   
   //check if userConfig returned undefined, if so use systemConfig
   if(compStr("undefined", r_Buffer)){
-    ini_gets(r_Section, r_Key, "undefined", r_Buffer, 100, systemConfigValue);
+    ini_gets(r_Section, r_Key, "undefined", r_Buffer, 300, systemConfigValue);
   }
 }
 
